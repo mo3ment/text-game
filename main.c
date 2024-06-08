@@ -36,7 +36,7 @@ int main(void)
                          "But that was a long time ago. A lot has changed\nsince then. Yeah...",
                          "\"...\"",
                          "This time around, it isn't mom and dad walking in\nand out of the house, but rather Alexander and Danica.",
-                         "In a sense, nothing hadn't changed. If the house\nhad a mind of its own, it couldn't tell the\ndifference. Of course not.",
+                         "In a sense, nothing had changed. If the house\nhad a mind of its own, it couldn't tell the\ndifference. Of course not.",
                          "To it, there's always been three pairs of legs\nexiting and entering the house, using it for company.",
                          "But to me, it will never be the same. The people\nthat called it home are no longer with us. All of them.",
                          "\"Except for me, duh.\"",
