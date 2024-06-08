@@ -8,7 +8,7 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    Rectangle game_screen = {0, 0, 800, 800};
+    Rectangle game_screen = {0, 0, 1000, 1000};
 
     InitWindow(game_screen.width, game_screen.height, "Browser VN");
 
@@ -21,40 +21,38 @@ int main(void)
         int size;
     } letter_pos;
 
-    int size = 20;    
+    int size = 30;    
 
-    char* strings[26] = {
-                         "The rain fell softly, a gentle lullaby for the restless\nnight.",
-                         "He couldn't shake the feeling that someone was watch-\ning him.",
-                         "Her heart raced as she opened the mysterious letter.",
-                         "The forest was eerily quiet, save for the occasional\nrustle of leaves.",
-                         "She stared at the photograph, lost in memories.",
-                         "A cat meowed, breaking the silence of the empty alley.",
-                         "His footsteps echoed in the empty corridor.",
-                         "The candle flickered, casting dancing shadows on the\nwalls.",
-                         "She took a deep breath, steadying herself before the\nbig presentation.",
-                         "The old house creaked with every gust of wind.",
-                         "He found solace in the rhythmic crashing of the waves.",
-                         "She whispered a silent prayer, hoping for a miracle.",
-                         "The city lights sparkled like a sea of stars.",
-                         "He couldn't help but laugh at the absurdity of it all.",
-                         "The garden was overgrown, a testament to years of\nneglect.",
-                         "She felt a chill run down her spine.",
-                         "His hands trembled as he held the ancient artifact.",
-                         "The sunset painted the sky with vibrant colors.",
-                         "She danced alone, lost in her own world.",
-                         "The distant thunder rumbled ominously.",
-                         "He leaned against the tree, contemplating his next\nmove.",
-                         "She wore a dress the color of the ocean.",
-                         "The library was a haven of quiet and knowledge.",
-                         "He watched as the snowflakes drifted gently to the\nground.",
-                         "Her laughter was infectious, filling the room with joy.",
-                         "The mountain peak was shrouded in mist, mysterious\nand alluring."
+    Font bread_font = LoadFont("MSGOTHIC.TTF");
+
+    char* strings[22] = {
+                         "It's getting dark again. The sun slowly melts into\nthe ground and takes back the light it gave to the\nvillage. What a shame, I think to myself.",
+                         "\"That rounds off my day, pretty much.\"",
+                         "I've never really been a night owl. Alexander always\nteases me for it, saying that is because I'm afraid\nof the dark.",
+                         "After involuntarily yawning, I decide it's best for\nme to go to sleep.",
+                         "Sleep... it's one of those weird things I can't wrap\nmy head around. Coming up for excuses to stay up, I\nentertain these thoughts of mine.",
+                         "\"I wake up as tired as the night before.\"",
+                         "Tea occasionally helps, but not enough for me to\nconsistently get a good night's sleep. Mom and dad used\nto say that I rolled around a lot in my sleep, hehe.",
+                         "But that was a long time ago. A lot has changed\nsince then. Yeah...",
+                         "\"...\"",
+                         "This time around, it isn't mom and dad walking in\nand out of the house, but rather Alexander and Danica.",
+                         "In a sense, nothing hadn't changed. If the house\nhad a mind of its own, it couldn't tell the\ndifference. Of course not.",
+                         "To it, there's always been three pairs of legs\nexiting and entering the house, using it for company.",
+                         "But to me, it will never be the same. The people\nthat called it home are no longer with us. All of them.",
+                         "\"Except for me, duh.\"",
+                         "\"...\"",
+                         "\".......\"",
+                         "\".........................................\"",
+                         "I wonder if that is the case sometimes. I mean...",
+                         "I've changed since then. There's no doubt about it.\nWhilst I'm still in one shape, I died along with them.",
+                         "In the darkest of days.. when I feel the most alone\nin this house...",
+                         "When my headache reminds me to not peer into the dark...",
+                         "\"I wish I wasn't spared.\""
                         };
 
-    int string_format[26][2] = {0}; // string_number, string_y_pos
+    int string_format[22][2] = {0}; // string_number, string_y_pos
 
-    string_format[0][1] = MeasureText("0000000000", size);
+    string_format[0][1] = MeasureTextEx(bread_font, "0000000", size, 0).x;
 
     int string_number = 0;
     float counter = 0;
@@ -71,7 +69,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
 
-        if ((IsKeyPressed(KEY_SPACE) && string_number < 26) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && string_number < 26))
+        if ((IsKeyPressed(KEY_SPACE) && string_number < 22) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && string_number < 22))
         {
             if (!is_text_rolling)
             {
@@ -113,36 +111,36 @@ int main(void)
         BeginDrawing();
             ClearBackground(BLACK);
 
-            DrawRectangleLinesEx(game_screen, 3.f, WHITE);
+            //DrawRectangleLinesEx(game_screen, 3.f, WHITE);
 
                 for (int i = 0; i < string_number - next_page_string; i++)
                 {
 
-                    if (string_format[i][1] >= game_screen.width - MeasureText("0000000000", size))
+                    if (string_format[i][1] >= game_screen.width - MeasureText("0000000", size))
                     {
                         next_page_string += i;
 
-                        string_format[0][1] = MeasureText("0000000000", size);
+                        string_format[0][1] = MeasureText("0000000", size);
 
                         break;
                     }
 
                     if (i == string_number - next_page_string - 1 )
                     {
-                        DrawText(TextSubtext(strings[next_page_string+i], 0, letter_count), MeasureText("0000000000", size), string_format[i][1], size, WHITE);
+                        DrawTextEx(bread_font, TextSubtext(strings[next_page_string+i], 0, letter_count), (Vector2) { MeasureTextEx(bread_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
                     }
                     else
                     {
-                        DrawText(strings[next_page_string+i], MeasureText("0000000000", size), string_format[i][1], size, WHITE);
+                        DrawTextEx(bread_font, strings[next_page_string+i], (Vector2) { MeasureTextEx(bread_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
                     }
 
-                    string_format[i+1][1] = string_format[i][1] + 2*1.1*size;
+                    string_format[i+1][1] = string_format[i][1] + 2*32;
                     
                     for (int j = 0; j < strlen(strings[next_page_string+i]); j++)
                     {
                         if (strings[next_page_string+i][j] == '\n')
                         {
-                            string_format[i+1][1] += 1.1*size;
+                            string_format[i+1][1] += 32;
                         }
                     }
 
@@ -150,8 +148,8 @@ int main(void)
 
                 if (debug_lines_enabled)
                 {
-                    DrawLine(MeasureText("0000000000", size), 0, MeasureText("0000000000", size), game_screen.height, WHITE);
-                    DrawLine(game_screen.width - MeasureText("0000000000", size), 0, game_screen.width - MeasureText("0000000000", size), game_screen.height, WHITE);
+                    DrawLine(MeasureTextEx(bread_font, "0000000", size, 0).x, 0, MeasureTextEx(bread_font, "0000000", size, 0).x, game_screen.height, WHITE);
+                    DrawLine(game_screen.width - MeasureTextEx(bread_font, "0000000", size, 0).x, 0, game_screen.width - MeasureTextEx(bread_font, "0000000", size, 0).x, game_screen.height, WHITE);
                 }
 
         EndDrawing();
