@@ -29,6 +29,7 @@ int main(void)
 
     const char* caution_header = "CAUTION!";
     const char* caution_body = "This is a work of fiction. Names, characters, businesses, places,\n  events, locales, and incidents are either the products of the\n    author's imagination or used in a fictitious manner. Any\n        resemblance to actual persons, living or dead, or\n              actual events is purely coincidental.";
+    const char* control_info = "Before I let you experience the mystery of Planinar village,\n                  let me remind you to...\n\n\n\n       Go into Fullscreen Mode using [F11] for a more\n         immersive experience, and press [SPACE] to\n                   progress through text.";
 
     const char* strings[22] = {
                          "It's getting dark again. The sun slowly melts into\nthe ground and takes back the light it gave to the\nvillage. What a shame, I think to myself.",
@@ -55,7 +56,7 @@ int main(void)
                          "\"I wish I wasn't spared.\""
                         };
 
-    int string_format[12][2] = {0}; // string_number, string_y_pos
+    int string_format[13][2] = {0}; // string_number, string_y_pos
 
     string_format[0][1] = MeasureTextEx(body_font, "0000000", size, 0).x;
 
@@ -66,9 +67,10 @@ int main(void)
     int next_page_string = 0;
     bool is_text_rolling = false;
     bool debug_lines_enabled = false;
-    float caution_loading_percentage = 0.f;
+    float loading_percentage = 0.f;
     float text_opacity = 0;
     bool fade_to_black = false;
+    bool control_mode = false;
 
     int game_mode = 0;
 
@@ -84,6 +86,8 @@ int main(void)
         {
             case 0:
             {
+                caution_countdown -= GetFrameTime();
+
                 if (IsKeyPressed(KEY_Q))
                 {
                     game_mode++;
@@ -93,19 +97,17 @@ int main(void)
                     string_number++;
                 }
 
-                caution_countdown -= GetFrameTime();
-
-                if (caution_loading_percentage != 1)
+                else if (loading_percentage != 1)
                 {
-                    caution_loading_percentage += GetFrameTime()/10;
+                    loading_percentage += GetFrameTime()/10;
 
-                    if (caution_loading_percentage >= 1.f)
+                    if (loading_percentage >= 1.f)
                     {
-                        caution_loading_percentage = 1;
+                        loading_percentage = 1;
                     }
                 }
 
-                if (caution_loading_percentage == 1)
+                else if (loading_percentage == 1)
                 {
                     if (!fade_to_black)
                     {
@@ -124,19 +126,52 @@ int main(void)
                         }
                     }
 
-                    if ((IsKeyPressed(KEY_SPACE) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))))
+                    if ((IsKeyPressed(KEY_SPACE) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))) && !control_mode)
                     {
-                        game_mode++;
+                        control_mode = true;
+                        fade_to_black = false;
+                        text_opacity = 0;
+                        loading_percentage = 0;
 
-                        is_text_rolling = true;
-                        letter_count = 0;
-                        string_number++;
+                        game_mode++;
+                    }
+
+                }
+                break;
+            }
+
+            case 1:
+            {
+                if (!fade_to_black)
+                {
+                    text_opacity += GetFrameTime();
+                    if (text_opacity >= 1)
+                    {
+                        fade_to_black = true;
                     }
                 }
 
+                if (fade_to_black)
+                {
+                    text_opacity -= GetFrameTime();
+                    if (text_opacity < 0)
+                    {
+                        fade_to_black = false;
+                    }
+                }
+
+                if ((IsKeyPressed(KEY_SPACE) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))))
+                {
+                    game_mode++;
+
+                    is_text_rolling = true;
+                    letter_count = 0;
+                    string_number++;
+                }
                 break;
             }
-            case 1:
+
+            case 2:
             {
                 if ((IsKeyPressed(KEY_SPACE) && string_number < 22) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && string_number < 22))
                 {
@@ -193,10 +228,10 @@ int main(void)
                     DrawTextEx(body_font, caution_header, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, caution_header, 2*size, 0).x / 2, game_screen.height / 4 - MeasureTextEx(body_font, caution_header, 2*size, 0).y / 2 }, 2*size, 0, WHITE);
                     DrawTextEx(body_font, caution_body, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, caution_body, size, 0).x / 2, game_screen.height / 2 - MeasureTextEx(body_font, caution_body, size, 0).y / 2}, size, 0, WHITE);
                 
-                    if (caution_loading_percentage < 1)
+                    if (loading_percentage < 1)
                     {
-                        DrawRectangleLinesEx((Rectangle) { game_screen.width / 4 - 2, (game_screen.height / 4) * 3 - 40 / 2, game_screen.width / 2, 40 }, 2.f, WHITE);
-                        DrawRectangle(game_screen.width / 4 - 2, (game_screen.height / 4) * 3 - 40 / 2, caution_loading_percentage * (game_screen.width / 2), 40, WHITE);
+                        DrawRectangleLinesEx((Rectangle) { game_screen.width / 4 - 2, (game_screen.height / 4) * 3 - 30 / 2, game_screen.width / 2, 30 }, 2.f, WHITE);
+                        DrawRectangle(game_screen.width / 4 - 2, (game_screen.height / 4) * 3 - 30 / 2, loading_percentage * (game_screen.width / 2), 30, WHITE);
                     }
 
                     else 
@@ -208,6 +243,14 @@ int main(void)
                 }
 
                 case 1:
+                {
+                    DrawTextEx(body_font, control_info, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, control_info, size, 0).x / 2, game_screen.height / 2 - MeasureTextEx(body_font, control_info, size, 0).y / 2}, size, 0, WHITE);
+                    DrawTextEx(body_font, "Press [SPACE] to continue", (Vector2) {game_screen.width / 2 - MeasureTextEx(body_font, "Press [SPACE] to continue", size, 0).x / 2, (game_screen.height / 4) * 3 - MeasureTextEx(body_font, "Press [SPACE] to continue", size, 0).y / 2 }, size, 0, Fade(WHITE, text_opacity));
+
+                    break;
+                }
+
+                case 2:
                 {
                     for (int i = 0; i < string_number - next_page_string; i++)
                     {
