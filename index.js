@@ -39,7 +39,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmpf54qv8ot.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmplm9ai7wa.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -219,21 +219,21 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
 
   })();
 
-// end include: C:\Users\Ajdin\AppData\Local\Temp\tmpf54qv8ot.js
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmpcx_f3mz1.js
+// end include: C:\Users\Ajdin\AppData\Local\Temp\tmplm9ai7wa.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmpxvadu0j8.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpcx_f3mz1.js
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmpxg6bb2l8.js
+  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpxvadu0j8.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmpo_nchbvy.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpxg6bb2l8.js
+  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpo_nchbvy.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -1133,40 +1133,40 @@ function dbg(...args) {
 // === Body ===
 
 var ASM_CONSTS = {
-  104192: () => { if (document.fullscreenElement) return 1; },  
- 104238: () => { return document.getElementById('canvas').width; },  
- 104290: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 104358: () => { document.exitFullscreen(); },  
- 104385: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
- 104458: () => { if (document.fullscreenElement) return 1; },  
- 104504: () => { return document.getElementById('canvas').width; },  
- 104556: () => { return screen.width; },  
- 104581: () => { document.exitFullscreen(); },  
- 104608: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
- 104741: () => { if (document.fullscreenElement) return 1; },  
- 104787: () => { return document.getElementById('canvas').width; },  
- 104839: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 104907: () => { if (document.fullscreenElement) return 1; },  
- 104953: () => { return document.getElementById('canvas').width; },  
- 105005: () => { return screen.width; },  
- 105030: () => { if (document.fullscreenElement) return 1; },  
- 105076: () => { return document.getElementById('canvas').width; },  
- 105128: () => { return screen.width; },  
- 105153: () => { document.exitFullscreen(); },  
- 105180: () => { if (document.fullscreenElement) return 1; },  
- 105226: () => { return document.getElementById('canvas').width; },  
- 105278: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 105346: () => { document.exitFullscreen(); },  
- 105373: () => { return screen.width; },  
- 105398: () => { return screen.height; },  
- 105424: () => { return window.screenX; },  
- 105451: () => { return window.screenY; },  
- 105478: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
- 105531: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
- 105602: () => { document.getElementById('canvas').style.cursor = 'none'; },  
- 105659: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
- 105730: () => { if (document.fullscreenElement) return 1; },  
- 105776: () => { if (document.pointerLockElement) return 1; }
+  95392: () => { if (document.fullscreenElement) return 1; },  
+ 95438: () => { return document.getElementById('canvas').width; },  
+ 95490: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 95558: () => { document.exitFullscreen(); },  
+ 95585: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
+ 95658: () => { if (document.fullscreenElement) return 1; },  
+ 95704: () => { return document.getElementById('canvas').width; },  
+ 95756: () => { return screen.width; },  
+ 95781: () => { document.exitFullscreen(); },  
+ 95808: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
+ 95941: () => { if (document.fullscreenElement) return 1; },  
+ 95987: () => { return document.getElementById('canvas').width; },  
+ 96039: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 96107: () => { if (document.fullscreenElement) return 1; },  
+ 96153: () => { return document.getElementById('canvas').width; },  
+ 96205: () => { return screen.width; },  
+ 96230: () => { if (document.fullscreenElement) return 1; },  
+ 96276: () => { return document.getElementById('canvas').width; },  
+ 96328: () => { return screen.width; },  
+ 96353: () => { document.exitFullscreen(); },  
+ 96380: () => { if (document.fullscreenElement) return 1; },  
+ 96426: () => { return document.getElementById('canvas').width; },  
+ 96478: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 96546: () => { document.exitFullscreen(); },  
+ 96573: () => { return screen.width; },  
+ 96598: () => { return screen.height; },  
+ 96624: () => { return window.screenX; },  
+ 96651: () => { return window.screenY; },  
+ 96678: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
+ 96731: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
+ 96802: () => { document.getElementById('canvas').style.cursor = 'none'; },  
+ 96859: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
+ 96930: () => { if (document.fullscreenElement) return 1; },  
+ 96976: () => { if (document.pointerLockElement) return 1; }
 };
 function GetWindowInnerWidth() { return window.innerWidth; }
 function GetWindowInnerHeight() { return window.innerHeight; }
@@ -10243,10 +10243,7 @@ var dynCall_viiii = Module['dynCall_viiii'] = createExportWrapper('dynCall_viiii
 var dynCall_vidd = Module['dynCall_vidd'] = createExportWrapper('dynCall_vidd', 4);
 var dynCall_ii = Module['dynCall_ii'] = createExportWrapper('dynCall_ii', 2);
 var dynCall_iiii = Module['dynCall_iiii'] = createExportWrapper('dynCall_iiii', 4);
-var dynCall_fffi = Module['dynCall_fffi'] = createExportWrapper('dynCall_fffi', 4);
-var dynCall_ffi = Module['dynCall_ffi'] = createExportWrapper('dynCall_ffi', 3);
 var dynCall_iii = Module['dynCall_iii'] = createExportWrapper('dynCall_iii', 3);
-var dynCall_viiiiii = Module['dynCall_viiiiii'] = createExportWrapper('dynCall_viiiiii', 7);
 var dynCall_vi = Module['dynCall_vi'] = createExportWrapper('dynCall_vi', 2);
 var dynCall_vffff = Module['dynCall_vffff'] = createExportWrapper('dynCall_vffff', 5);
 var dynCall_vf = Module['dynCall_vf'] = createExportWrapper('dynCall_vf', 2);
@@ -10261,6 +10258,7 @@ var dynCall_viif = Module['dynCall_viif'] = createExportWrapper('dynCall_viif', 
 var dynCall_vif = Module['dynCall_vif'] = createExportWrapper('dynCall_vif', 3);
 var dynCall_vifff = Module['dynCall_vifff'] = createExportWrapper('dynCall_vifff', 5);
 var dynCall_viffff = Module['dynCall_viffff'] = createExportWrapper('dynCall_viffff', 6);
+var dynCall_viiiiii = Module['dynCall_viiiiii'] = createExportWrapper('dynCall_viiiiii', 7);
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji', 5);
 var dynCall_iidiiii = Module['dynCall_iidiiii'] = createExportWrapper('dynCall_iidiiii', 7);
 var _asyncify_start_unwind = createExportWrapper('asyncify_start_unwind', 1);
