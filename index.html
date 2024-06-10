@@ -9,18 +9,19 @@
     <meta name="title" content="Browser Text Game">
     <meta name="description" content="Text game inside browser (only on pc or desktop view on phone works)">
     <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
 
     <style>
-        body {
+        html, body {
             margin: 0;
+            overflow: hidden; /* Disable scrolling */
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: black;
         }
         canvas.emscripten {

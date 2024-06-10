@@ -39,7 +39,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmp15ak5m51.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmpu9057k17.js
 
   if (!Module.expectedDataFileDownloads) {
     Module.expectedDataFileDownloads = 0;
@@ -219,21 +219,21 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
 
   })();
 
-// end include: C:\Users\Ajdin\AppData\Local\Temp\tmp15ak5m51.js
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmp7iw0rbkd.js
+// end include: C:\Users\Ajdin\AppData\Local\Temp\tmpu9057k17.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmp7agpnk08.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if (Module['$ww'] || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmp7iw0rbkd.js
-// include: C:\Users\Ajdin\AppData\Local\Temp\tmpu_c9287f.js
+  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmp7agpnk08.js
+// include: C:\Users\Ajdin\AppData\Local\Temp\tmpca6ng3i8.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpu_c9287f.js
+  // end include: C:\Users\Ajdin\AppData\Local\Temp\tmpca6ng3i8.js
 
 
 // Sometimes an existing Module object exists with properties
@@ -1133,40 +1133,40 @@ function dbg(...args) {
 // === Body ===
 
 var ASM_CONSTS = {
-  95632: () => { if (document.fullscreenElement) return 1; },  
- 95678: () => { return document.getElementById('canvas').width; },  
- 95730: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 95798: () => { document.exitFullscreen(); },  
- 95825: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
- 95898: () => { if (document.fullscreenElement) return 1; },  
- 95944: () => { return document.getElementById('canvas').width; },  
- 95996: () => { return screen.width; },  
- 96021: () => { document.exitFullscreen(); },  
- 96048: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
- 96181: () => { if (document.fullscreenElement) return 1; },  
- 96227: () => { return document.getElementById('canvas').width; },  
- 96279: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 96347: () => { if (document.fullscreenElement) return 1; },  
- 96393: () => { return document.getElementById('canvas').width; },  
- 96445: () => { return screen.width; },  
- 96470: () => { if (document.fullscreenElement) return 1; },  
- 96516: () => { return document.getElementById('canvas').width; },  
- 96568: () => { return screen.width; },  
- 96593: () => { document.exitFullscreen(); },  
- 96620: () => { if (document.fullscreenElement) return 1; },  
- 96666: () => { return document.getElementById('canvas').width; },  
- 96718: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 96786: () => { document.exitFullscreen(); },  
- 96813: () => { return screen.width; },  
- 96838: () => { return screen.height; },  
- 96864: () => { return window.screenX; },  
- 96891: () => { return window.screenY; },  
- 96918: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
- 96971: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
- 97042: () => { document.getElementById('canvas').style.cursor = 'none'; },  
- 97099: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
- 97170: () => { if (document.fullscreenElement) return 1; },  
- 97216: () => { if (document.pointerLockElement) return 1; }
+  96464: () => { if (document.fullscreenElement) return 1; },  
+ 96510: () => { return document.getElementById('canvas').width; },  
+ 96562: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 96630: () => { document.exitFullscreen(); },  
+ 96657: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
+ 96730: () => { if (document.fullscreenElement) return 1; },  
+ 96776: () => { return document.getElementById('canvas').width; },  
+ 96828: () => { return screen.width; },  
+ 96853: () => { document.exitFullscreen(); },  
+ 96880: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
+ 97013: () => { if (document.fullscreenElement) return 1; },  
+ 97059: () => { return document.getElementById('canvas').width; },  
+ 97111: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 97179: () => { if (document.fullscreenElement) return 1; },  
+ 97225: () => { return document.getElementById('canvas').width; },  
+ 97277: () => { return screen.width; },  
+ 97302: () => { if (document.fullscreenElement) return 1; },  
+ 97348: () => { return document.getElementById('canvas').width; },  
+ 97400: () => { return screen.width; },  
+ 97425: () => { document.exitFullscreen(); },  
+ 97452: () => { if (document.fullscreenElement) return 1; },  
+ 97498: () => { return document.getElementById('canvas').width; },  
+ 97550: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 97618: () => { document.exitFullscreen(); },  
+ 97645: () => { return screen.width; },  
+ 97670: () => { return screen.height; },  
+ 97696: () => { return window.screenX; },  
+ 97723: () => { return window.screenY; },  
+ 97750: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
+ 97803: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
+ 97874: () => { document.getElementById('canvas').style.cursor = 'none'; },  
+ 97931: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
+ 98002: () => { if (document.fullscreenElement) return 1; },  
+ 98048: () => { if (document.pointerLockElement) return 1; }
 };
 function GetWindowInnerWidth() { return window.innerWidth; }
 function GetWindowInnerHeight() { return window.innerHeight; }

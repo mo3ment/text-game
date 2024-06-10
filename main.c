@@ -31,28 +31,77 @@ int main(void)
     const char* caution_body = "This is a work of fiction. Names, characters, businesses, places,\n  events, locales, and incidents are either the products of the\n    author's imagination or used in a fictitious manner. Any\n        resemblance to actual persons, living or dead, or\n              actual events is purely coincidental.";
     const char* control_info = "Before I let you experience the mystery of Planinar village,\n                  let me remind you to...\n\n\n\n       Go into Fullscreen Mode using [F11] for a more\n         immersive experience, and press [SPACE] to\n                   progress through text.";
 
-    const char* strings[22] = {
-                         "It's getting dark again. The sun slowly melts into\nthe ground and takes back the light it gave to the\nvillage. What a shame, I think to myself.",
+    const char* strings[25] = {
+                         "It's getting dark again. It only makes sense, it's\
+                         \n that time of the day. The sun hides behind the\
+                         \nmountains and takes the light with it. One could\
+                         \n think the sun was afraid of us.",
+                         
+                         "Hehe... what a silly idea.",
+                         
                          "\"That rounds off my day, pretty much.\"",
-                         "I've never really been a night owl. Alexander always\nteases me for it, saying that is because I'm afraid\nof the dark.",
-                         "After involuntarily yawning, I decide it's best for\nme to go to sleep.",
-                         "Sleep... it's one of those weird things I can't wrap\nmy head around. Coming up for excuses to stay up, I\nentertain these thoughts of mine.",
+
+                         "I've never really been a night owl. Alexander always\
+                         \n teases me for it, saying that is because I'm\
+                         \nafraid of the dark.",
+
+                         "There is something to it, but I'll never give him the\
+                         \n satisfaction of being right. It gets so dark\
+                         \naround here that it's hard to tell if your eyes are\
+                         \n open or not. Like you're both awake and asleep,\
+                         \nat the same time.",
+
+                         "\"Guh...............................\"",
+
+                         "I'm too tired for this. ",
+
+                         "Sleep... it's one of those weird things I can't wrap\
+                         \n my head around. Coming up for excuses to stay up, I\
+                         \nentertain these thoughts of mine.",
+
                          "\"I wake up as tired as the night before.\"",
-                         "Tea occasionally helps, but not enough for me to\nconsistently get a good night's sleep. Mom and dad used\nto say that I rolled around a lot in my sleep, hehe.",
-                         "But that was a long time ago. A lot has changed\nsince then. Yeah...",
+
+                         "Tea occasionally helps, but not enough for me to\
+                         \n consistently get a good night's sleep. Mom and dad used\
+                         \nto say that I rolled around a lot in my sleep, hehe.",
+
+                         "But that was a long time ago. A lot has changed\
+                         \n since then. Yeah...",
+
                          "\"...\"",
-                         "This time around, it isn't mom and dad walking in\nand out of the house, but rather Alexander and Danica.",
-                         "In a sense, nothing had changed. If the house\nhad a mind of its own, it couldn't tell the\ndifference. Of course not.",
-                         "To it, there's always been three pairs of legs\nexiting and entering the house, using it for company.",
-                         "But to me, it will never be the same. The people\nthat called it home are no longer with us. All of them.",
+
+                         "This time around, it isn't mom and dad walking in\
+                         \n and out of the house, but rather Alexander and Danica.",
+
+                         "In a sense, nothing had changed. If the house\
+                         \n had a mind of its own, it couldn't tell the\
+                         \ndifference. Of course not.",
+
+                         "To it, there's always been three pairs of legs\
+                         \n exiting and entering the house, using it for company.",
+
+                         "But to me, it will never be the same. The people\
+                         \n that called it home are no longer with us. All of them.",
+
+
                          "\"Except for me, duh.\"",
+
                          "\"...\"",
+
                          "\".......\"",
+
                          "\".........................................\"",
+
                          "I wonder if that is the case sometimes. I mean...",
-                         "I've changed since then. There's no doubt about it.\nWhilst I'm still in one shape, I died along with them.",
-                         "In the darkest of days.. when I feel the most alone\nin this house...",
+
+                         "I've changed since then. There's no doubt about it.\
+                         \n Whilst I'm still in one shape, I died along with them.",
+
+                         "In the darkest of days.. when I feel the most alone\
+                         \n in this house...",
+
                          "When my headache reminds me to not peer into the dark...",
+
                          "\"I wish I wasn't spared.\""
                         };
 
@@ -254,7 +303,6 @@ int main(void)
                 {
                     for (int i = 0; i < string_number - next_page_string; i++)
                     {
-
                         if (string_format[i][1] >= game_screen.width - MeasureText("0000000", size))
                         {
                             next_page_string += i;
