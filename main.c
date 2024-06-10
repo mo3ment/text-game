@@ -28,8 +28,8 @@ int main(void)
     SetTextureFilter(body_font.texture, TEXTURE_FILTER_ANISOTROPIC_16X);
 
     const char* caution_header = "CAUTION!";
-    const char* caution_body = "This is a work of fiction. Names, characters, businesses, places,\n  events, locales, and incidents are either the products of the\n    author's imagination or used in a fictitious manner. Any\n        resemblance to actual persons, living or dead, or\n              actual events is purely coincidental.";
-    const char* control_info = "Before I let you experience the mystery of Planinar village,\n                  let me remind you to...\n\n\n\n       Go into Fullscreen Mode using [F11] for a more\n         immersive experience, and press [SPACE] to\n                   progress through text.";
+    const char* caution_body = "This is a work of fiction. Names, characters, busines-\n   ses, places, events, locales, and incidents are\n either the products of the author's imagination or\n   used in a fictitious manner. Any resemblance to\n actual persons, living or dead, or actual events is\n                purely coincidental.";
+    const char* control_info = " Before I let you experience the mystery of Planinar\n           village, let me remind you to...\n\n\n\n   Go into Fullscreen Mode using [F11] for a more\n     immersive experience, and press [SPACE] to\n                progress through text.";
 
     const char* strings[25] = {
                          "It's getting dark again. It only makes sense, it's\
@@ -42,14 +42,14 @@ int main(void)
                          "\"That rounds off my day, pretty much.\"",
 
                          "I've never really been a night owl. Alexander always\
-                         \n teases me for it, saying that is because I'm\
-                         \nafraid of the dark.",
+                         \n teases me for it, saying that is because I'm afraid\
+                         \nof the dark.",
 
                          "There is something to it, but I'll never give him the\
-                         \n satisfaction of being right. It gets so dark\
-                         \naround here that it's hard to tell if your eyes are\
-                         \n open or not. Like you're both awake and asleep,\
-                         \nat the same time.",
+                         \n satisfaction of being right. It gets so dark around\
+                         \nhere that it's hard to tell if your eyes are open\
+                         \n or not. Like you're both awake and asleep, at the\
+                         \nsame time.",
 
                          "\"Guh...............................\"",
 
@@ -126,7 +126,6 @@ int main(void)
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
-        
         // Update
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
@@ -275,7 +274,7 @@ int main(void)
                 case 0:
                 {
                     DrawTextEx(body_font, caution_header, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, caution_header, 2*size, 0).x / 2, game_screen.height / 4 - MeasureTextEx(body_font, caution_header, 2*size, 0).y / 2 }, 2*size, 0, WHITE);
-                    DrawTextEx(body_font, caution_body, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, caution_body, size, 0).x / 2, game_screen.height / 2 - MeasureTextEx(body_font, caution_body, size, 0).y / 2}, size, 0, WHITE);
+                    DrawTextEx(body_font, caution_body, (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, game_screen.height / 2 - MeasureTextEx(body_font, caution_body, size, 0).y / 2}, size, 0, WHITE);
                 
                     if (loading_percentage < 1)
                     {
@@ -293,7 +292,7 @@ int main(void)
 
                 case 1:
                 {
-                    DrawTextEx(body_font, control_info, (Vector2) { game_screen.width / 2 - MeasureTextEx(body_font, control_info, size, 0).x / 2, game_screen.height / 2 - MeasureTextEx(body_font, control_info, size, 0).y / 2}, size, 0, WHITE);
+                    DrawTextEx(body_font, control_info, (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, game_screen.height / 2 - MeasureTextEx(body_font, control_info, size, 0).y / 2}, size, 0, WHITE);
                     DrawTextEx(body_font, "Press [SPACE] to continue", (Vector2) {game_screen.width / 2 - MeasureTextEx(body_font, "Press [SPACE] to continue", size, 0).x / 2, (game_screen.height / 4) * 3 - MeasureTextEx(body_font, "Press [SPACE] to continue", size, 0).y / 2 }, size, 0, Fade(WHITE, text_opacity));
 
                     break;
