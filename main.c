@@ -10,7 +10,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     Rectangle game_screen = {0, 0, 1000, 1000};
 
-    InitWindow(game_screen.width, game_screen.height, "Browser VN");
+    InitWindow(game_screen.width, game_screen.height, "When Snow Befalls Summit");
 
     //SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
