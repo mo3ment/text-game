@@ -36,9 +36,9 @@ int main(void)
                          "It's getting dark again. It only makes sense, it's\
                          \n that time of the day. The sun hides behind the\
                          \nmountains and takes the light with it. One could\
-                         \n think the sun was afraid of us.",
+                         \n think the sun was afraid of us.}n",
                          
-                         "Hehe... what a silly idea.",
+                         "Hehe... what a silly idea.\n",
                          
                          "\"That rounds off my day, pretty much.\"\n",
 
