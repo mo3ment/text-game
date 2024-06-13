@@ -31,81 +31,79 @@ int main(void)
     const char* caution_body = "This is a work of fiction. Names, characters, busines-\n   ses, places, events, locales, and incidents are\n either the products of the author's imagination or\n   used in a fictitious manner. Any resemblance to\n actual persons, living or dead, or actual events is\n                purely coincidental.";
     const char* control_info = " Before I let you experience the mystery of Planinar\n           village, let me remind you to...\n\n\n\n   Go into Fullscreen Mode using [F11] for a more\n     immersive experience, and press [SPACE] to\n                progress through text.";
 
-    const int strings_size = 26;
+    const int strings_size = 25;
     const char* strings[strings_size] = {
                          "It's getting dark again. It only makes sense, it's\
                          \n that time of the day. The sun hides behind the\
                          \nmountains and takes the light with it. One could\
-                         \n think the sun was afraid of us.\n",
+                         \n think the sun was afraid of us.",
                          
-                         "Hehe... what a silly idea.\n",
+                         "Hehe... what a silly idea.",
                          
-                         "\"That rounds off my day, pretty much.\"\n",
+                         "\"That rounds off my day, pretty much.\"",
 
                          "I've never really been a night owl. Alexander always\
                          \n teases me for it, saying that is because I'm afraid\
-                         \nof the dark.\n",
+                         \nof the dark.",
 
                          "There is something to it, but I'll never give him the\
                          \n satisfaction of being right. It gets so dark around\
                          \nhere that it's hard to tell if your eyes are open\
                          \n or not. Like you're both awake and asleep, at the\
-                         \nsame time.\n",
+                         \nsame time.",
 
-                         "\"Guh...............................\"\n",
+                         "\"Guh...............................\"",
 
-                         "I'm too tired for this.\n",
+                         "I'm too tired for this. ",
 
                          "Sleep... it's one of those weird things I can't wrap\
                          \n my head around. Coming up for excuses to stay up, I\
-                         \nentertain these thoughts of mine.\n",
+                         \nentertain these thoughts of mine.",
 
-                         "\"I wake up as tired as the night before.\"\n",
+                         "\"I wake up as tired as the night before.\"",
 
                          "Tea occasionally helps, but not enough for me to\
                          \n consistently get a good night's sleep. Mom and dad used\
-                         \nto say that I rolled around a lot in my sleep, hehe.\n",
+                         \nto say that I rolled around a lot in my sleep, hehe.",
 
                          "But that was a long time ago. A lot has changed\
-                         \n since then. Yeah...\n",
+                         \n since then. Yeah...",
 
-                         "\"...\"\n",
+                         "\"...\"",
 
                          "This time around, it isn't mom and dad walking in\
-                         \n and out of the house, but rather Alexander and Danica.\n",
+                         \n and out of the house, but rather Alexander and Danica.",
 
                          "In a sense, nothing had changed. If the house\
                          \n had a mind of its own, it couldn't tell the\
-                         \ndifference. Of course not.\n",
+                         \ndifference. Of course not.",
 
                          "To it, there's always been three pairs of legs\
-                         \n exiting and entering the house, using it for company.\n",
+                         \n exiting and entering the house, using it for company.",
 
                          "But to me, it will never be the same. The people\
-                         \n that called it home are no longer with us. All of them.\n",
+                         \n that called it home are no longer with us. All of them.",
 
 
-                         "\"Except for me, duh.\"\n",
+                         "\"Except for me, duh.\"",
 
-                         "\"...\"\n",
+                         "\"...\"",
 
-                         "\".......\"\n",
+                         "\".......\"",
 
-                         "\".........................................\"\n",
+                         "\".........................................\"",
 
-                         "I wonder if that is the case sometimes. I mean...\n",
+                         "I wonder if that is the case sometimes. I mean...",
 
                          "I've changed since then. There's no doubt about it.\
-                         \n Whilst I'm still in one shape, I died along with them.\n",
+                         \n Whilst I'm still in one shape, I died along with them.",
 
-                         "In the darkest of days...",
-                         
-                         "when I feel the most alone\
-                         \n in this house...\n",
+                         "In the darkest of days.. when I feel the most alone\
+                         \n in this house...",
 
-                         "When my headache reminds me to not peer into the dark...\n",
+                         "When my headache reminds me to not peer into the dark...",
 
-                         "\"I wish I wasn't spared.\"\n"
+                         "\"I wish I wasn't spared.\""
                         };
 
     int string_format[13][2] = {0}; // string_number, string_y_pos
@@ -123,8 +121,6 @@ int main(void)
     float text_opacity = 0;
     bool fade_to_black = false;
     bool control_mode = false;
-    int sentence_length = 0;
-    float horizontal_padding = 0;
 
     int game_mode = 0;
 
@@ -316,51 +312,23 @@ int main(void)
                             break;
                         }
 
-                        if (i == string_number - next_page_string - 1)
+                        if (i == string_number - next_page_string - 1 )
                         {
-                            if (horizontal_padding == 0 || i == 0)
-                            {
-                                DrawTextEx(body_font, TextSubtext(strings[next_page_string+i], 0, letter_count), (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
-                            }
-                            else
-                            {
-                                DrawTextEx(body_font, TextSubtext(strings[next_page_string+i], 0, letter_count), (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x + horizontal_padding, string_format[i][1] }, size, 0, WHITE);
-                            }
+                            DrawTextEx(body_font, TextSubtext(strings[next_page_string+i], 0, letter_count), (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
                         }
                         else
                         {
-                            if (horizontal_padding == 0)
-                            {
-                                DrawTextEx(body_font, strings[next_page_string+i], (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
-                            }
-                            else
-                            {
-                                DrawTextEx(body_font, strings[next_page_string+i], (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x + horizontal_padding, string_format[i][1] }, size, 0, WHITE);
-                            }
+                            DrawTextEx(body_font, strings[next_page_string+i], (Vector2) { MeasureTextEx(body_font, "0000000", size, 0).x, string_format[i][1] }, size, 0, WHITE);
                         }
 
                         string_format[i+1][1] = string_format[i][1] + 2*32;
                         
-                        for (int j = 0; j <= strlen(strings[next_page_string+i]); j++)
+                        for (int j = 0; j < strlen(strings[next_page_string+i]); j++)
                         {
                             if (strings[next_page_string+i][j] == '\n')
                             {
-                                sentence_length = 0;
                                 string_format[i+1][1] += 32;
                             }
-                            else if (strings[next_page_string+i][j] == '\0')
-                            {
-                                if (sentence_length > 1)
-                                {
-                                    string_format[i+1][1] -= 2*32;
-                                    horizontal_padding = MeasureTextEx(body_font, " ", size, 0).x * (sentence_length-1);
-                                }
-                                else if (sentence_length == 1)
-                                {
-                                    horizontal_padding = 0;
-                                }
-                            }
-                            sentence_length++;
                         }
 
                     }
