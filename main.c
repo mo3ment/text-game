@@ -31,7 +31,8 @@ int main(void)
     const char* caution_body = "This is a work of fiction. Names, characters, busines-\n   ses, places, events, locales, and incidents are\n either the products of the author's imagination or\n   used in a fictitious manner. Any resemblance to\n actual persons, living or dead, or actual events is\n                purely coincidental.";
     const char* control_info = " Before I let you experience the mystery of Planinar\n           village, let me remind you to...\n\n\n\n   Go into Fullscreen Mode using [F11] for a more\n     immersive experience, and press [SPACE] to\n                progress through text.";
 
-    const char* strings[25] = {
+    const int strings_size = 25;
+    const char* strings[strings_size] = {
                          "It's getting dark again. It only makes sense, it's\
                          \n that time of the day. The sun hides behind the\
                          \nmountains and takes the light with it. One could\
@@ -214,14 +215,14 @@ int main(void)
 
                     is_text_rolling = true;
                     letter_count = 0;
-                    string_number++;
+                    //string_number++;
                 }
                 break;
             }
 
             case 2:
             {
-                if ((IsKeyPressed(KEY_SPACE) && string_number < 22) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && string_number < 22))
+                if ((IsKeyPressed(KEY_SPACE) && string_number < strings_size) || (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && string_number < strings_size))
                 {
                     if (!is_text_rolling)
                     {
